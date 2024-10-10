@@ -7,3 +7,7 @@
     Cidade: <%=w.city%>
     <%=w.area%> m2
 <%end%>
+
+<%if @warehouses.empty?%>
+    <p>Não existem galpões cadastrados</p>
+<%end%>
