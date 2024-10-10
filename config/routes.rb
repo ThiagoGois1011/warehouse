@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  get root to: 'home#index'
+  root to: 'home#index'
+  resources :warehouses, only: [:show]
 end
