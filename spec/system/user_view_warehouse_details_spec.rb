@@ -8,7 +8,7 @@ describe 'Usuário vê detalhes do galpão' do
                       description: 'Galpão destinado para cargas internacionais')
     w.save()
     #Act
-    visit('/')
+    visit(root_path)
     click_on('Aeroporto SP')
     #Assert
 
@@ -20,5 +20,17 @@ describe 'Usuário vê detalhes do galpão' do
     expect(page). to have_content('Galpão destinado para cargas internacionais')
   end
 
-  
+  it 'e volta para a tela inicial' do
+    #Arrage
+    w = Warehouse.new(name: 'Aeroporto SP', code: 'GRU', city: 'Guarulhos', area: 100_000,
+    address: 'Avenida do Aeroporto, 1000', CEP: '15000-000',
+    description: 'Galpão destinado para cargas internacionais')
+    w.save()
+    #Act
+    visit(root_path)
+    click_on('Aeroporto SP')
+    click_on('Voltar')
+    #Assert
+    expect(current_path).to eq(root_path)
+  end
 end
