@@ -11,6 +11,7 @@ class WarehousesController < ApplicationController
                                                          :CEP, :area)
     w = Warehouse.new(warehouse_params)
     w.save()
-    redirect_to root_path
+    # flash[:notice] = 'Galpão cadastrado com sucesso.'
+    redirect_to root_path, notice: 'Galpão cadastrado com sucesso.'
   end
 end
