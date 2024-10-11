@@ -1,5 +1,6 @@
 <section id='warehouses'>
     <h2>Galpões</h2>
+    <%= link_to 'Cadastrar Galpão', new_warehouse_path%>
     <%= @warehouses.each do |w|%>
         <div>
             <h3> <%=link_to w.name, warehouse_path(w.id)%></h3>
