@@ -1,7 +1,7 @@
 <section id='warehouses'>
     <h2>Galpões</h2>
     <%= link_to 'Cadastrar Galpão', new_warehouse_path%>
-    <%= @warehouses.each do |w|%>
+    <% @warehouses.each do |w|%>
         <div>
             <h3> <%=link_to w.name, warehouse_path(w.id)%></h3>
            
@@ -12,6 +12,12 @@
                 <dd><%=w.city%></dd>
                 <dt>Área:</dt>
                 <dd><%=w.area%> m2</dd>
+                <dt>Endereço:</dt>
+                <dd><%=w.address%></dd>
+                <dt>CEP:</dt>
+                <dd><%=w.CEP%></dd>
+                <dt>Descrição:</dt>
+                <dd><%=w.description%></dd>
             </dl>
         </div>
     <%end%>

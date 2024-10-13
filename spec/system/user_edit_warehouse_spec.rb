@@ -37,10 +37,10 @@ describe 'Usuário edita um galpão' do
     click_on 'Enviar'
     #Assert
     expect(page).to have_content 'Galpão atualizado com sucesso.'
-    expect(page).to have_content 'Nome: Galpão Internacional'
+    expect(page).to have_content 'Galpão Internacional'
     expect(page).to have_content 'Endereço: Avenida dos Galpôes, 500'
     expect(page).to have_content 'Área: 200000 m2'
-    expect(page).to have_content 'CEP: 160000-000'
+    expect(page).to have_content 'CEP: 16000-000'
     
   end
 
