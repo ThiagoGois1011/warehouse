@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   root to: 'home#index'
-  resources :warehouses, only: [:show, :create, :new, :edit, :update]
+  resources :warehouses, only: [:show, :create, :new, :edit, :update, :destroy]
 end
