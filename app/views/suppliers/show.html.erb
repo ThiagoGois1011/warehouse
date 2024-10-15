@@ -1,31 +1,17 @@
-<h1><%= @supplier.corporate_name %></h1>
+<h1>Fornecedor <%= @supplier.brand_name %></h1>
+<h2><%= @supplier.corporate_name %></h2>
 
 <dl>
-    <dt>
-        Razão Social:
-    </dt>
-    <dd>
-        <%= @supplier.corporate_name%>
-    </dd>
-    <dt>
-        Documento: 
-    </dt>
-    <dd>
-        <%= @supplier.restration_number%>
-    </dd>
-    <dt>
-        Endereço:
-    </dt>
-    <dd>
-        <%= @supplier.full_address%> - <%= @supplier.city%> - <%= @supplier.state%>
-    </dd>
-    <dt>
-        E-mail:
-    </dt>
-    <dd>
-        <%= @supplier.email%>
-    </dd>
+    <dt>Documento:</dt>
+    <dd><%= @supplier.restration_number%></dd>
+    <dt>Endereço:</dt>
+    <dd><%= @supplier.full_address%> - <%= @supplier.city%> - <%= @supplier.state%></dd>
+    <dt>E-mail:</dt>
+    <dd><%= @supplier.email%></dd>
 </dl>
 
-<%= link_to 'Voltar' , root_path%>
 <%= link_to 'Editar' , edit_supplier_path%>
+
+<div>
+    <%= link_to 'Voltar' , root_path%>
+</div>

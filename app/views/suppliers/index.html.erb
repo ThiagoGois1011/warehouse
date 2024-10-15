@@ -1,36 +1,24 @@
+<h1>Fornecedores</h1>
+
 <%= link_to 'Cadastrar novo fornecedor', new_supplier_path%>
 
 <% if @suppliers.any?%>
-    <% @suppliers.each do |s| %>
-    <%= link_to s.brand_name, supplier_path(s.id)%>
-
-    <dl>
-        <dt>
-            Nome Fantasia: 
-        </dt>
-        <dd>
-            <%= s.corporate_name%>
-        </dd>
-        <dt>
-            Documento: 
-        </dt>
-        <dd>
-            <%= s.restration_number%>
-        </dd>
-        <dt>
-            Endereço:
-        </dt>
-        <dd>
-            <%= s.full_address%> - <%= s.city%> - <%= s.state%>
-        </dd>
-        <dt>
-            E-mail:
-        </dt>
-        <dd>
-            <%= s.email%>
-        </dd>
-    </dl>
-<%end%>
+    <table>
+        <thead>
+            <tr>
+                <th> Nome </th>
+                <th>Localicação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @suppliers.each do |s| %>
+            <tr>
+                <td><%= link_to s.brand_name, s%></td>
+                <td><%= s.city%> - <%= s.state%></td>
+            </tr>
+            <%end%>
+        </tbody>
+    </table>
 <% else%>
     <p>Não existem fornecedores cadastrados.</p>
 <%end%>

@@ -41,7 +41,7 @@ describe 'Usuário edita um fornecedor' do
     #Assert
     expect(page).to have_content 'Fornecedor atualizado com sucesso.'
     expect(page).to have_content 'SERASA'
-    expect(page).to have_content 'Nome Fantasia: SERASA LTDA'
+    expect(page).to have_content 'SERASA LTDA'
     expect(page).to have_content 'Endereço: Avenida dos Galpôes, 500 - Várzea Nova - BH'
     expect(page).to have_content 'Documento: 95445216660122'
     expect(page).to have_content 'E-mail: contato@serasa.com'
