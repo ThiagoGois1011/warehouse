@@ -11,3 +11,12 @@ pt-BR:
         CEP: 'CEP'
         address: 'Endereço'
         area: 'Área'
+        
+      supplier:
+        corporate_name: 'Nome Fantasia'
+        brand_name: 'Razão Social'
+        restration_number: 'CNPJ'
+        full_address: 'Endereço'
+        city: 'Cidade'
+        state: 'Estado'
+        email: 'E-mail'
