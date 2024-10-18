@@ -23,6 +23,7 @@ describe 'Usuário cadastra um pedido' do
     supplier = Supplier.create!(corporate_name: 'ACME LTDA', brand_name: 'ACME', restration_number: '43447216000102',
                                 full_address: 'Av das Palmas, 100', city: 'Bauru', state: 'SP', email: 'contato@acme.com')
     
+    allow(SecureRandom).to receive(:alphanumeric).and_return('ABC12345')
     #Act    
     login_as(user)
     visit root_path
@@ -35,6 +36,7 @@ describe 'Usuário cadastra um pedido' do
     #Assert
 
     expect(page).to have_content 'Pedido registrado com sucesso.'              
+    expect(page).to have_content 'Pedido ABC12345'          
     expect(page).to have_content 'Galpão Destino: GRU - Aeroporto SP'              
     expect(page).to have_content 'Fornecedor: ACME LTDA'              
     expect(page).to have_content 'Usuário Responsável: Sergio - sergio@email.com'
