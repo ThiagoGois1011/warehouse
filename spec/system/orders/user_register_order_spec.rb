@@ -41,6 +41,7 @@ describe 'Usuário cadastra um pedido' do
     expect(page).to have_content 'Fornecedor: ACME LTDA'              
     expect(page).to have_content 'Usuário Responsável: Sergio - sergio@email.com'
     expect(page).to have_content 'Data Prevista de Entrega: ' + 1.days.from_now.strftime('%d/%m/%Y')
+    expect(page).to have_content 'Situação do Pedido: Pendente'
     expect(page).not_to have_content 'Galpão Maceio'
     expect(page).not_to have_content 'Spark Industries Brasil LTDA'
 

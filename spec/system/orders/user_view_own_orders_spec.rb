@@ -20,9 +20,9 @@ describe 'Usuário vê seus próprios pedidos' do
     supplier = Supplier.create!(corporate_name: 'Spark Industries Brasil LTDA', brand_name: 'Spark', restration_number: '79458216100152',
                     full_address: 'Torre da Indústria, 1', city: 'Teresina', state: 'PI', email: 'vendas@spark.com.br')
     
-    order1 = Order.create!(user: sergio, warehouse: warehouse, supplier: supplier, estimated_delivery_date: 1.day.from_now)
-    order2 = Order.create!(user: joao, warehouse: warehouse, supplier: supplier, estimated_delivery_date: 1.day.from_now)
-    order3 = Order.create!(user: sergio, warehouse: warehouse, supplier: supplier, estimated_delivery_date: 1.day.from_now)
+    order1 = Order.create!(user: sergio, warehouse: warehouse, supplier: supplier, estimated_delivery_date: 1.day.from_now , status: 'pending')
+    order2 = Order.create!(user: joao, warehouse: warehouse, supplier: supplier, estimated_delivery_date: 1.day.from_now, status: 'delivered')
+    order3 = Order.create!(user: sergio, warehouse: warehouse, supplier: supplier, estimated_delivery_date: 1.day.from_now, status: 'canceled')
                                     
     #Act
 
@@ -33,8 +33,11 @@ describe 'Usuário vê seus próprios pedidos' do
     #Assert
 
     expect(page).to have_content order1.code
+    expect(page).to have_content 'Pendente'
     expect(page).not_to have_content order2.code
+    expect(page).not_to have_content 'Entregue'
     expect(page).to have_content order3.code
+    expect(page).to have_content 'Cancelado'
   end
 
   it 'e visita um pedido' do
