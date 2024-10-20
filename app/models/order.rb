@@ -7,7 +7,7 @@ class Order < ApplicationRecord
   has_many :product_models, through: :order_items
   validates :code, :estimated_delivery_date,  presence: true
   validate :estimated_delivery_date_is_future
-  before_validation :generate_code
+  before_validation :generate_code, on: :create
 
   private
 
