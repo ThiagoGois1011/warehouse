@@ -13,5 +13,12 @@
 </div>
 
 <div>
+    <h2>Itens em Estoque</h2>
+    <% @stocks.each_pair do |pm, quantity|%>
+        <%= quantity %> x <%= pm.sku %>
+    <% end %>
+</div>
+
+<div>
     <%= link_to 'Voltar', root_path%>
 </div>
